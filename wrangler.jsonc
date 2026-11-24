@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "stravin-website",
+  "compatibility_date": "2026-11-01",
+  "routes": [
+    { "pattern": "stravin.dev", "custom_domain": true },
+    { "pattern": "www.stravin.dev", "custom_domain": true }
+  ],
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}

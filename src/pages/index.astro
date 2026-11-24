@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GitGraphBackdrop from '../components/GitGraphBackdrop.astro';
+import {
+  CORE_FEATURES,
+  CORE_REPO_URL,
+  HERO_METRICS,
+} from '../data/site';
+---
+
+<BaseLayout
+  title="Stravin — Stateless, Multi-Region Git Infrastructure"
+  description="Stravin is a stateless, multi-region hosted Git platform built in Go on Amazon S3 and DynamoDB, engineered for human teams and AI agent fleets."
+>
+  <section class="hero">
+    <GitGraphBackdrop />
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <p class="eyebrow">
+          <span class="eyebrow-pin" aria-hidden="true"></span>
+          <span>APACHE 2.0 CORE &middot; GO &middot; S3 + DYNAMODB</span>
+        </p>
+
+        <h1 id="main-content" tabindex="-1" class="hero-title">
+          Stateless, multi-region Git infrastructure.
+        </h1>
+
+        <p class="hero-pitch">
+          Stravin separates immutable S3 packfile storage from DynamoDB
+          per-reference transactions so repositories scale to thousands of
+          concurrent pushes per second—without custom consensus clusters or
+          cross-region quorum stalls.
+        </p>
+
+        <div class="hero-actions">
+          <a
+            href={CORE_REPO_URL}
+            class="cta-primary"
+            rel="noopener noreferrer"
+          >
+            <span>Explore Stravin Core on GitHub</span>
+            <svg
+              aria-hidden="true"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path
+                d="M3.5 8H12.5M12.5 8L8.5 4M12.5 8L8.5 12"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="square"
+              />
+            </svg>
+          </a>
+          <span class="repo-meta">git &middot; ssh &middot; smart http</span>
+        </div>
+      </div>
+
+      <ul class="metrics-list" role="list">
+        {
+          HERO_METRICS.map((metric) => (
+            <li class="metric-card">
+              <span class="metric-value">{metric.value}</span>
+              <span class="metric-label">{metric.label}</span>
+              <span class="metric-detail">{metric.detail}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-kicker">Core Architecture</p>
+        <h2 class="section-title">Engineered for high-concurrency Git</h2>
+        <p class="section-lead">
+          Traditional Git servers couple mutable disks with storage-host locks.
+          Stravin Core runs stateless Go services over managed cloud primitives
+          so human developers and autonomous agent fleets push without contention.
+        </p>
+      </div>
+
+      <ul class="feature-grid" role="list">
+        {
+          CORE_FEATURES.map((feature) => (
+            <li class="feature-card">
+              <span class="feature-tag">{feature.tag}</span>
+              <h3 class="feature-title">{feature.title}</h3>
+              <p class="feature-desc">{feature.description}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="closing-band">
+        <div class="closing-copy">
+          <h2 class="closing-title">Run the full core stack locally in one command.</h2>
+          <p class="closing-text">
+            Boot all five Go daemons against Floci via Docker Compose with zero
+            real AWS resources—complete with OpenTelemetry dashboards and
+            Toxiproxy chaos testing.
+          </p>
+        </div>
+        <a
+          href={CORE_REPO_URL}
+          class="cta-primary"
+          rel="noopener noreferrer"
+        >
+          <span>View stravin-dev/core</span>
+          <svg
+            aria-hidden="true"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+          >
+            <path
+              d="M4.5 11.5L11.5 4.5M11.5 4.5H6M11.5 4.5V10"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="square"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

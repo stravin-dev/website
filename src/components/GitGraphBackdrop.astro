@@ -1,0 +1,156 @@
+---
+---
+
+<div class="hero-backdrop" aria-hidden="true">
+  <svg
+    class="git-graph-svg"
+    viewBox="0 0 1200 520"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="xMidYMid slice"
+    aria-hidden="true"
+  >
+    <!-- Main trunk (y=260) -->
+    <path
+      d="M -20 260 H 1220"
+      stroke="var(--graph-trunk)"
+      stroke-width="2.5"
+    />
+
+    <!-- Upper feature branch (y=170) -->
+    <path
+      d="M 130 260 C 175 260 175 170 220 170 H 540 C 585 170 585 260 630 260"
+      stroke="var(--graph-branch-a)"
+      stroke-width="2"
+    />
+
+    <!-- Upper sub-branch (y=90) -->
+    <path
+      d="M 290 170 C 330 170 330 90 370 90 H 770 C 815 90 815 170 860 170 H 950 C 990 170 990 260 1030 260"
+      stroke="var(--graph-branch-b)"
+      stroke-width="1.75"
+    />
+
+    <!-- Secondary upper branch (right side) -->
+    <path
+      d="M 710 260 C 750 260 750 170 790 170 H 860"
+      stroke="var(--graph-branch-a)"
+      stroke-width="1.75"
+    />
+
+    <!-- Lower branch (y=350) -->
+    <path
+      d="M 240 260 C 285 260 285 350 330 350 H 670 C 715 350 715 260 760 260"
+      stroke="var(--graph-branch-a)"
+      stroke-width="2"
+    />
+
+    <!-- Lower agent branch (y=430) -->
+    <path
+      d="M 410 350 C 450 350 450 430 490 430 H 880 C 925 430 925 350 970 350 H 1060 C 1100 350 1100 260 1140 260"
+      stroke="var(--graph-branch-b)"
+      stroke-width="1.75"
+    />
+
+    <!-- Extra short branch on far left -->
+    <path
+      d="M -20 350 H 70 C 110 350 110 260 150 260"
+      stroke="var(--graph-branch-b)"
+      stroke-width="1.75"
+    />
+
+    <!-- Commit nodes: main trunk -->
+    <g fill="var(--bg-canvas)" stroke="var(--graph-trunk)" stroke-width="2.5">
+      <circle cx="50" cy="260" r="5.5" />
+      <circle cx="130" cy="260" r="6" />
+      <circle cx="240" cy="260" r="6" />
+      <circle cx="380" cy="260" r="6" />
+      <circle cx="510" cy="260" r="5.5" />
+      <circle cx="630" cy="260" r="7" />
+      <circle cx="760" cy="260" r="7" />
+      <circle cx="900" cy="260" r="5.5" />
+      <circle cx="1030" cy="260" r="7" />
+      <circle cx="1140" cy="260" r="6" />
+    </g>
+
+    <!-- Merge commit inner dots -->
+    <g fill="var(--graph-trunk)">
+      <circle cx="630" cy="260" r="2.5" />
+      <circle cx="760" cy="260" r="2.5" />
+      <circle cx="1030" cy="260" r="2.5" />
+    </g>
+
+    <!-- Commit nodes: upper branches -->
+    <g fill="var(--bg-canvas)" stroke="var(--graph-branch-a)" stroke-width="2">
+      <circle cx="290" cy="170" r="5" />
+      <circle cx="420" cy="170" r="5" />
+      <circle cx="520" cy="170" r="5" />
+      <circle cx="860" cy="170" r="5.5" />
+      <circle cx="940" cy="170" r="5" />
+    </g>
+    <g fill="var(--bg-canvas)" stroke="var(--graph-branch-b)" stroke-width="2">
+      <circle cx="440" cy="90" r="4.5" />
+      <circle cx="590" cy="90" r="4.5" />
+      <circle cx="730" cy="90" r="5" />
+    </g>
+
+    <!-- Commit nodes: lower branches -->
+    <g fill="var(--bg-canvas)" stroke="var(--graph-branch-a)" stroke-width="2">
+      <circle cx="410" cy="350" r="5" />
+      <circle cx="550" cy="350" r="5" />
+      <circle cx="655" cy="350" r="5" />
+      <circle cx="990" cy="350" r="5" />
+    </g>
+    <g fill="var(--bg-canvas)" stroke="var(--graph-branch-b)" stroke-width="2">
+      <circle cx="540" cy="430" r="4.5" />
+      <circle cx="690" cy="430" r="4.5" />
+      <circle cx="840" cy="430" r="5" />
+    </g>
+
+    <!-- Geometric version tag markers (no words) -->
+    <g class="graph-tag" transform="translate(380, 260)">
+      <line x1="0" y1="-9" x2="0" y2="-24" stroke="var(--stravin-accent)" stroke-width="1.5" stroke-dasharray="2 2" />
+      <path
+        d="M -11 -44 H 11 L 19 -34 L 11 -24 H -11 Z"
+        fill="var(--bg-surface)"
+        stroke="var(--stravin-accent)"
+        stroke-width="1.75"
+      />
+      <circle cx="-4" cy="-34" r="2.25" fill="var(--stravin-accent)" />
+    </g>
+
+    <g class="graph-tag" transform="translate(760, 260)">
+      <line x1="0" y1="-10" x2="0" y2="-26" stroke="var(--stravin-accent)" stroke-width="1.5" stroke-dasharray="2 2" />
+      <path
+        d="M -12 -46 H 12 L 20 -36 L 12 -26 H -12 Z"
+        fill="var(--bg-surface)"
+        stroke="var(--stravin-accent)"
+        stroke-width="1.75"
+      />
+      <circle cx="-5" cy="-36" r="2.25" fill="var(--stravin-accent)" />
+    </g>
+
+    <g class="graph-tag" transform="translate(1030, 260)">
+      <line x1="0" y1="-10" x2="0" y2="-26" stroke="var(--stravin-accent)" stroke-width="1.5" stroke-dasharray="2 2" />
+      <path
+        d="M -12 -46 H 12 L 20 -36 L 12 -26 H -12 Z"
+        fill="var(--bg-surface)"
+        stroke="var(--stravin-accent)"
+        stroke-width="1.75"
+      />
+      <circle cx="-5" cy="-36" r="2.25" fill="var(--stravin-accent)" />
+    </g>
+
+    <!-- Secondary branch tag marker -->
+    <g class="graph-tag" transform="translate(730, 90)">
+      <line x1="0" y1="-8" x2="0" y2="-20" stroke="var(--stravin-accent)" stroke-width="1.5" stroke-dasharray="2 2" />
+      <path
+        d="M -10 -38 H 10 L 17 -29 L 10 -20 H -10 Z"
+        fill="var(--bg-surface)"
+        stroke="var(--stravin-accent)"
+        stroke-width="1.5"
+      />
+      <circle cx="-4" cy="-29" r="2" fill="var(--stravin-accent)" />
+    </g>
+  </svg>
+</div>
